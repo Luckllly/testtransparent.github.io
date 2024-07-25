@@ -16,6 +16,7 @@
    
 
     function sendMessage() {
+       window.parent.postMessage("{\"type\": \"openNavigate\",\"data\":{\"category\":\"gameAR\",\"tabName\":\"Trò chơi AR\"}}", "*");
        console.log("abc");
     }
   </script>
