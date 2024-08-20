@@ -42,6 +42,8 @@
           console.log("material " + newEntity.getAttribute('material'));
           // Append the new element to the DOM
           document.getElementById("ascene").appendChild(newEntity);
+          var sceneEl = document.querySelector('a-scene');
+          sceneEl.emit('renderstart');
      }
 
     function sendMessage() {
