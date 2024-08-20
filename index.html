@@ -31,18 +31,9 @@
 </a-scene>
   <script>
      function createEntity() {
-          const newEntity = document.querySelector('#box');
-          const latitue = document.getElementById("latitude").value;
-          const longitude = document.getElementById("longitude").value;
-          console.log("material 1 " + newEntity.getAttribute('material'));
-          // Set attributes and properties
-          newEntity.setAttribute('material', 'color: yellow');
-          newEntity.setAttribute('geometry', 'primitive: box');
-          newEntity.setAttribute('scale', '3 3 3');
-          newEntity.setAttribute('gps-new-entity-place', "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
           var sceneEl = document.querySelector('a-scene');
           sceneEl.innerHTML += `
-  <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: ${latitue}; longitude: ${longitude}" scale="2 2 2"></a-entity>
+  <a-entity material='color: yellow' geometry='primitive: box' gps-new-entity-place="latitude: ${latitue}; longitude: ${longitude}" scale="3 3 3"></a-entity>
 `;
           sceneEl.emit('renderstart');
      }
