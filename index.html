@@ -39,6 +39,7 @@
           newEntity.setAttribute('scale', '3 3 3');
           newEntity.setAttribute('gps-new-entity-place', "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
           console.log("material " + newEntity.getAttribute('material') + " " + document.getElementById("latitude").value + " " + document.getElementById("longitude").value);
+          console.dir("material " + newEntity.getAttribute('material') + " " + document.getElementById("latitude").value + " " + document.getElementById("longitude").value);
           var sceneEl = document.querySelector('a-scene');
           sceneEl.emit('renderstart');
      }
