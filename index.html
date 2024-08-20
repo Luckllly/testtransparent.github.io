@@ -34,11 +34,11 @@
           const newEntity = document.querySelector('#box');
           console.log("material 1 " + newEntity.getAttribute('material'));
           // Set attributes and properties
-          newEntity.setAttribute('material', 'color: red');
+          newEntity.setAttribute('material', 'color: yellow');
           newEntity.setAttribute('geometry', 'primitive: box');
           newEntity.setAttribute('scale', '3 3 3');
           newEntity.setAttribute('gps-new-entity-place', "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
-          console.log("material " + newEntity.getAttribute('material'));
+          console.log("material " + newEntity.getAttribute('material') + " " + document.getElementById("latitude").value + " " + document.getElementById("longitude").value);
           var sceneEl = document.querySelector('a-scene');
           sceneEl.emit('renderstart');
      }
