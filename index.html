@@ -23,21 +23,21 @@
 <input type="text" id="latitude" name="latitude"><br><br>
 <label for="longitude">Longitude:</label>
 <input type="text" id="longitude" name="longitude"><br><br>
-<button onclick="CreateEntity()">Tạo đối tượng tại vị trí</button>
+<button onclick="createEntity()">Tạo đối tượng tại vị trí</button>
 </div>
      <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     <a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 50'></a-camera>
     <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 21.06800802965068; longitude: 105.8112606263095" scale="2 2 2"></a-entity>
 </a-scene>
   <script>
-     function CreateEntity() {
+     function createEntity() {
           const newEntity = document.createElement('a-entity');
 
           // Set attributes and properties
-          newEntity.material = 'color: red';
-          newEntity.geometry = 'primitive: box';
-          newEntity.scale = "3 3 3";
-          newEntity.gps-new-entity-place = "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value;
+          newEntity.setAttribute("material", "color: red");
+          newEntity.setAttribute("geometry", "primitive: box");
+          newEntity.setAttribute("scale", "3 3 3");
+          newEntity.setAttribute("gps-new-entity-place", "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
 
           // Append the new element to the DOM
           document.body.appendChild(newEntity);
