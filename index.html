@@ -34,11 +34,15 @@
      function createEntity() {
           const latitue = document.getElementById("latitude").value;
           const longitude = document.getElementById("longitude").value;
+
+          const icon = document.createElement('a-image');
+          icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+          icon.setAttribute('name', place.name);
+          icon.setAttribute('scale', '20, 20');
+          icon.setAttribute('src', 'https://s3.educationxr.vn/ar-world/image/UI/hunting.png');
+          
           var sceneEl = document.querySelector('a-scene');
-          sceneEl.innerHTML += `
-  <a-entity material='color: yellow' geometry='primitive: box' gps-new-entity-place="latitude: ${latitue}; longitude: ${longitude}" scale="3 3 3"></a-entity>
-`;
-          document.querySelector("video:last-of-type").remove();
+          sceneEl.appendChild(icon);
      }
 
     function sendMessage() {
