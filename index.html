@@ -31,6 +31,8 @@
 </a-scene>
   <script>
      function createEntity() {
+          const latitue = document.getElementById("latitude").value;
+          const longitude = document.getElementById("longitude").value;
           var sceneEl = document.querySelector('a-scene');
           sceneEl.innerHTML += `
   <a-entity material='color: yellow' geometry='primitive: box' gps-new-entity-place="latitude: ${latitue}; longitude: ${longitude}" scale="3 3 3"></a-entity>
