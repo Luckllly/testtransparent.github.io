@@ -25,7 +25,7 @@
 <input type="text" id="longitude" name="longitude"><br><br>
 <button onclick="createEntity()">Tạo đối tượng tại vị trí</button>
 </div>
-     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+     <a-scene id='ascene' vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     <a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 50'></a-camera>
     <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 21.06800802965068; longitude: 105.8112606263095" scale="2 2 2"></a-entity>
 </a-scene>
@@ -40,7 +40,7 @@
           newEntity.setAttribute("gps-new-entity-place", "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
 
           // Append the new element to the DOM
-          document.body.appendChild(newEntity);
+          document.getElementById(ascene).appendChild(newEntity);
      }
 
     function sendMessage() {
