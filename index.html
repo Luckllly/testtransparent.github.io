@@ -34,10 +34,11 @@
           const newEntity = document.createElement('a-entity');
 
           // Set attributes and properties
+          newEntity.setAttribute("id", "test");
           newEntity.setAttribute('material', 'color: red');
           newEntity.setAttribute('geometry', 'primitive: box');
           newEntity.setAttribute('scale', '3 3 3');
-          //newEntity.setAttribute('gps-new-entity-place', "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
+          newEntity.setAttribute('gps-new-entity-place', "latitude: " + document.getElementById("latitude").value +"; "  + "longitude: " + document.getElementById("longitude").value);
           console.log("material " + newEntity.getAttribute('material'));
           // Append the new element to the DOM
           document.getElementById("ascene").appendChild(newEntity);
