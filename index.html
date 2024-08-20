@@ -19,31 +19,12 @@
 <button onclick="sendMessage()" type="button">send message</button>
 <button onclick="getElementById('demo').innerHTML=Date()">What day is today?</button>
 <p id="demo"></p>
-<label for="latitude">Latitude:</label>
-<input type="text" id="latitude" name="latitude"><br><br>
-<label for="longitude">Longitude:</label>
-<input type="text" id="longitude" name="longitude"><br><br>
-<button onclick="createEntity()">Tạo đối tượng tại vị trí</button>
 </div>
-     <a-scene id='ascene' vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
     <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity id="box" material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 21.06800802965068; longitude: 105.8112606263095" scale="2 2 2"></a-entity>
-     <a-entity material='color: green' geometry='primitive: box' gps-new-entity-place="latitude: 21.06800802900000; longitude: 105.8112606200000" scale="2 2 2"></a-entity>
+    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude: 21.06800802965068; longitude: 105.8112606263095" scale="2 2 2"></a-entity>
 </a-scene>
   <script>
-     function createEntity() {
-          const latitue = document.getElementById("latitude").value;
-          const longitude = document.getElementById("longitude").value;
-
-          const icon = document.createElement('a-image');
-          icon.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-          icon.setAttribute('name', "LLQ");
-          icon.setAttribute('scale', '20, 20');
-          icon.setAttribute('src', 'https://s3.educationxr.vn/ar-world/image/UI/hunting.png');
-          
-          var sceneEl = document.querySelector('a-scene');
-          sceneEl.appendChild(icon);
-     }
 
     function sendMessage() {
        window.parent.postMessage("{\"type\": \"openNavigate\",\"data\":{\"category\":\"gameAR\",\"tabName\":\"Trò chơi AR\"}}", "*");
